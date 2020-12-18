@@ -23,35 +23,8 @@
         height: 400px;
       }
 
-      /* Optional: Makes the sample page fill the window. 
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        padding: 0 !important;
-      }*/
-
       table {
         font-size: 12px;
-      }
-
-      .hotel-search {
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        background: #fff;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 440px;
-        z-index: 1;
       }
 
       #map {
@@ -70,23 +43,6 @@
         overflow-x: hidden;
       }
 
-      #findhotels {
-        font-size: 14px;
-      }
-
-      #locationField {
-        -webkit-box-flex: 1 1 190px;
-        -ms-flex: 1 1 190px;
-        flex: 1 1 190px;
-        margin: 0 8px;
-      }
-
-      #controls {
-        -webkit-box-flex: 1 1 140px;
-        -ms-flex: 1 1 140px;
-        flex: 1 1 140px;
-      }
-
       #autocomplete {
         width: 100%;
       }
@@ -101,7 +57,7 @@
         margin: 4px;
       }
 
-      .hotelIcon {
+      .place2Icon {
         width: 24px;
         height: 24px;
       }
@@ -131,9 +87,6 @@
     </style>
     <script>
       // This example uses the autocomplete feature of the Google Places API.
-      // It allows the user to find all hotels in a given place, within a given
-      // country. It then displays markers for all the hotels returned,
-      // with on-click details for each hotel.
       // This example requires the Places library. Include the libraries=places
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
@@ -147,58 +100,6 @@
         "https://developers.google.com/maps/documentation/javascript/images/marker_green";
       const hostnameRegexp = new RegExp("^https?://.+?/");
       const countries = {
-     /*   au: {
-          center: { lat: -25.3, lng: 133.8 },
-          zoom: 4,
-        },
-        br: {
-          center: { lat: -14.2, lng: -51.9 },
-          zoom: 3,
-        },
-        ca: {
-          center: { lat: 62, lng: -110.0 },
-          zoom: 3,
-        },
-        fr: {
-          center: { lat: 46.2, lng: 2.2 },
-          zoom: 5,
-        },
-        de: {
-          center: { lat: 51.2, lng: 10.4 },
-          zoom: 5,
-        },
-        mx: {
-          center: { lat: 23.6, lng: -102.5 },
-          zoom: 4,
-        },
-        nz: {
-          center: { lat: -40.9, lng: 174.9 },
-          zoom: 5,
-        },
-        it: {
-          center: { lat: 41.9, lng: 12.6 },
-          zoom: 5,
-        },
-        za: {
-          center: { lat: -30.6, lng: 22.9 },
-          zoom: 5,
-        },
-        es: {
-          center: { lat: 40.5, lng: -3.7 },
-          zoom: 5,
-        },
-        pt: {
-          center: { lat: 39.4, lng: -8.2 },
-          zoom: 6,
-        },
-        in: {
-          center: { lat: 20.5937, lng: 78.9629 },
-          zoom: 3,
-        },
-        uk: {
-          center: { lat: 54.8, lng: -4.6 },
-          zoom: 5,
-        },*/
         in: {
           center: { lat: 20.5937, lng: 78.9629 },
           zoom: 5,
@@ -248,7 +149,7 @@
         }
       }
 
-      // Search for hotels in the selected city, within the viewport of the map.
+      // Search for places in the selected city, within the viewport of the map.
       function search() {
         const search = {
           bounds: map.getBounds(),
@@ -261,7 +162,7 @@
             clearResults();
             clearMarkers();
 
-            // Create a marker for each hotel found, and
+            // Create a marker, and
             // assign a letter of the alphabetic to each marker icon.
             for (let i = 0; i < results.length; i++) {
               const markerLetter = String.fromCharCode(
@@ -274,7 +175,7 @@
                 animation: google.maps.Animation.DROP,
                 icon: markerIcon,
               });
-              // If the user clicks a hotel marker, show the details of that hotel
+              // If the user clicks a marker, show the details of that
               // in an info window.
               markers[i].placeResult = results[i];
               google.maps.event.addListener(
@@ -354,7 +255,7 @@
         }
       }
 
-      // Get the place details for a hotel. Show the information in an info window,
+      // Get the place details. Show the information in an info window,
       // anchored on the marker for the hotel that the user selected.
       function showInfoWindow() {
         const marker = this;
@@ -373,7 +274,7 @@
       // Load the place information into the HTML elements used by the info window.
       function buildIWContent(place) {
         document.getElementById("iw-icon").innerHTML =
-          '<img class="hotelIcon" ' + 'src="' + place.icon + '"/>';
+          '<img class="place2Icon" ' + 'src="' + place.icon + '"/>';
         document.getElementById("iw-url").innerHTML =
           '<b><a href="' + place.url + '">' + place.name + "</a></b>";
         document.getElementById("iw-address").textContent = place.vicinity;
@@ -386,9 +287,7 @@
           document.getElementById("iw-phone-row").style.display = "none";
         }
 
-        // Assign a five-star rating to the hotel, using a black star ('&#10029;')
-        // to indicate the rating the hotel has earned, and a white star ('&#10025;')
-        // for the rating points not achieved.
+
         if (place.rating) {
           let ratingHtml = "";
 
