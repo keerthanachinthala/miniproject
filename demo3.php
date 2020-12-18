@@ -13,7 +13,7 @@
     
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXP5wp5-lZPvE-JiDa1Xzl4G_VJbih_RU&callback=initMap&libraries=places&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=places&v=weekly"
       defer
     ></script>
     <style type="text/css">
