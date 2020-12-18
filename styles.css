@@ -1,0 +1,140 @@
+.row-header {
+	margin: 0px auto;
+	padding: opx auto;
+}
+.row-content {
+	margin: 0px auto;
+	padding: 50px 0px 50px 0px;
+	border-bottom: 1px ridge;
+	min-height: 400px;
+	font-family:'Georgia', serif; 
+}
+body{
+	background-color: #EFF7FA;
+}
+.section1{
+	color:#14000C;
+}
+.navbar .logo_div h1 {
+  color: #B9E6F2;
+  font-size: 3em;
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-family: 'Tangerine', cursive;
+  padding-right: 20px;
+}
+.footer {
+	position: absolute;
+	width:100%;
+	background-color: #000000;
+	color:#ddd;
+	margin: 0px auto;
+	padding: 20px 0px 20px 0px;
+}
+
+.address {
+	font-size: 80%;
+	margin: 0px auto;
+	color: #0f0f0f;
+}
+ body {
+ 	padding: 50px 0px 50px 0px;
+ 	z-index: 0;
+ }
+ .navbar-dark {
+ 	background-color: #000000;
+ }
+ .tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+#carouselExampleIndicators{
+	color:#ddd;
+}
+/*
+.carousel {
+    background:#512DA8;
+}
+
+.carousel-item {
+  width:100%;
+  height: 300px;
+}*/
+
+
+.carousel-item img {
+    /*position: absolute;
+    top: 0;
+    left: 0;*/
+    min-height: 300px;
+    opacity: 0.9
+}
+
+#carouselButton {
+    right:0px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+}
+#myexplore,#makeyourtrip{
+	/*position:absolute;
+	top:330px;
+	left:400px;*/
+	border-radius: 50px;
+}
+#mycard{
+	border-radius: 50px;
+}
+.text-block {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  right:100px;
+  bottom:100px;
+  background-color: rgba(0,0,0,0);
+
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.card-image{
+	height:auto;
+	max-width: 100%;
+	background-repeat: no-repeat;
+	background-size: 300px 500px;
+}
+
+#card:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+#mycard:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+input[type=text] {
+  width: 200px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 50px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+#map {
+      height: 400px;
+      background-color: grey;
+    }
+
+input[type=text]:focus {
+  width: 100%;
+}
